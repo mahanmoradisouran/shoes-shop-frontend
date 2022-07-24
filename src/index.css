@@ -12,6 +12,9 @@
     @apply text-2xl;
     @apply font-bold;
   }
+  ::-webkit-scrollbar {
+    @apply hidden
+  }
 }
 @tailwind components;
 

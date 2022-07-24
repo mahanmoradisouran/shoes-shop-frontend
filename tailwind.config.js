@@ -6,6 +6,18 @@ module.exports = {
       fontFamily: {
         sans: ["Roboto", "Helvetica", "Arial", "sans-serif"],
       },
+      animation: {
+        skeleton: "skeleton 1s linear infinite",
+      },
+      keyframes: {
+        skeleton: {
+          "0%, 100%": {
+            background: "#f5f5f4",
+            borderRadius: "5px",
+          },
+          "50%": { background: "#fafaf9" },
+        },
+      },
     },
   },
   plugins: [require("daisyui")],

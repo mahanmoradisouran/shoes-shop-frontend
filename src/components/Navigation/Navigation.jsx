@@ -2,8 +2,11 @@ import React from "react";
 import { navItems } from "../../routes";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartFill } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 const Navigation = () => {
+  const cart = useSelector((state) => state.cart);
+
   return (
     <header className="w-full h-20 relative border-b border-gray-200">
       <nav className="h-full sm:w-4/5 w-11/12 mx-auto relative">
@@ -22,7 +25,12 @@ const Navigation = () => {
               </NavLink>
             </li>
           ))}
-          <li className="right-0 absolute w-20 flex justify-center" key="cart/">
+          <li className="right-0 absolute w-20 flex justify-center">
+            {cart.products.length > 0 && (
+              <span className="text-xs w-5 h-5 bg-red-600 text-white absolute rounded-full right-3 top-1 grid place-items-center">
+                {cart.products.length}
+              </span>
+            )}
             <NavLink
               className={({ isActive }) =>
                 isActive

@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RiShoppingCartFill } from "react-icons/ri";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_ITEM_TO_CART } from "../../Redux/Cart/CartTypes";
+import { BsFillBagCheckFill } from "react-icons/bs";
 
 const Product = ({ data }) => {
-  const { image, name, price, offPrice, discount } = data;
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const [isInCart, setIsInCart] = useState(false);
 
+  const { image, name, price, offPrice, discount, _id } = data;
   const offValue = ((price - offPrice) / price).toFixed(2) * 100;
+
+  useEffect(() => {
+    const productsId = cart.products.map((i) => i._id);
+    const result = productsId.includes(_id);
+    setIsInCart(result);
+  }, []);
+
+  const addProductToCart = (product) => {
+    dispatch({ type: ADD_ITEM_TO_CART, payload: product });
+    setIsInCart(true);
+  };
 
   return (
     <div
-      className={`card card-side border border-gray-200 px-2 relative overflow-visible ${
+      className={`hover:shadow-md transition-all duration-200 card card-side border border-gray-200 px-2 relative overflow-visible ${
         !discount && "opacity-50 "
       }`}
     >
@@ -28,20 +45,25 @@ const Product = ({ data }) => {
                 ${offPrice}
               </span>
             </p>
-            <span class="rotate-12 bg-violet-600 w-12 text-center rounded-lg text-slate-100 absolute -top-2 -right-2">
+            <span className="rotate-12 bg-violet-600 w-12 text-center rounded-lg text-slate-100 absolute -top-2 -right-2">
               {offValue}%
             </span>
           </>
         )}
-        <div className="card-actions justify-end">
-          {!discount && <spna className="text-red-400 pt-3">unavailable</spna>}
+        <div className="card-actions justify-end z-50">
+          {!discount && <span className="text-red-400 pt-3">unavailable</span>}
           <button
             disabled={!discount && "disabled"}
-            className={`btn btn-square text-slate-50 ${
-              discount && "bg-gradient-to-t from-violet-600 to-violet-500"
-            }`}
+            className={`transition-all duration-300 btn btn-square text-slate-50 ${
+              discount && !isInCart
+                ? "bg-gradient-to-t from-violet-600 to-violet-500"
+                : "bg-green-500 hover:bg-green-600"
+            }
+            `}
+            onClick={() => addProductToCart(data)}
           >
-            <RiShoppingCartFill size={24} />
+            {isInCart && <BsFillBagCheckFill size={24} />}
+            {!isInCart && <RiShoppingCartFill size={24} />}
           </button>
         </div>
       </div>
