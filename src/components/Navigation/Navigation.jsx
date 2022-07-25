@@ -27,7 +27,7 @@ const Navigation = () => {
           ))}
           <li className="right-0 absolute w-20 flex justify-center">
             {cart.products.length > 0 && (
-              <span className="text-xs w-5 h-5 bg-red-600 text-white absolute rounded-full right-3 top-1 grid place-items-center">
+              <span className="text-xs w-5 h-5 bg-red-600 text-white absolute rounded-full right-3 top-0 grid place-items-center">
                 {cart.products.length}
               </span>
             )}

@@ -1,7 +1,7 @@
 
 const CartSummary = ({ cart }) => {
   return (
-    <div className="w-full border border-gray-200 rounded-md p-5 sticky top-28">
+    <div className="w-full border border-gray-200 rounded-md p-5 sticky top-[120px]">
       <h3 className="text-center text-slate-800 text-lg">Cart summary</h3>
       <div>
         <p className="text-slate-600 font-semibold">Products :</p>
@@ -10,7 +10,8 @@ const CartSummary = ({ cart }) => {
             <li className="flex text-gray-500 my-2" key={item._id}>
               <h4 className="font-semibold">{item.name} </h4>
               <span className="mx-1 text-violet-600">
-                price=${item.offPrice}
+                price=${item.offPrice} 
+                {item.quantity !== 1 && ` x ${item.quantity}`}
               </span>
             </li>
           ))}

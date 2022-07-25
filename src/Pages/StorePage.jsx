@@ -24,7 +24,7 @@ const StorePage = () => {
   };
 
   return (
-    <div className="w-full flex py-10 ">
+    <div className="w-full flex gap-5 py-10 ">
       <ProductsFilter />
       <ProductsList
         products={products}
