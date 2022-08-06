@@ -6,15 +6,20 @@
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
     "daisyui": "^2.19.0",
+    "formik": "^2.2.9",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dual-range-slider": "^1.0.4",
     "react-icons": "^4.4.0",
-    "react-input-range": "^1.3.0",
-    "react-loading-skeleton": "^3.1.0",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-select": "^5.4.0",
+    "react-toastify": "^9.0.7",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

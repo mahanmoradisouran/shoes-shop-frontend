@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import {
-  ADD_ITEM_TO_CART,
-  REMOVE_ITEM_FROM_CART,
-} from "../../Redux/Cart/CartTypes";
+  AddItemToCart,
+  RemoveItemFromCart,
+} from "../../Redux/Cart/CartActions";
 
 const CartListProduct = ({ data }) => {
   const dispatch = useDispatch();
-  const incrementProducts = () =>
-    dispatch({ type: ADD_ITEM_TO_CART, payload: data });
-  const decrementProducts = () =>
-    dispatch({ type: REMOVE_ITEM_FROM_CART, payload: data });
+
+  const incrementProducts = () => dispatch(AddItemToCart(data));
+  const decrementProducts = () => dispatch(RemoveItemFromCart(data));
+
   return (
     <li className="w-full p-5 grid grid-cols-4 grid-rows-2 h-52 border-b border-gray-200">
       <img className="col-span-1 row-span-2" src={data.image} alt={data.name} />

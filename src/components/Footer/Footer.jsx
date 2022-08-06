@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-      <div className="footer p-10 bg-gray-100 text-black">
+      <div className="footer lg:p-10 py-10 px-3 bg-gray-100 text-black">
         <div>
           <span className="footer-title">Services</span>
           <p className="link link-hover">Branding</p>
@@ -24,9 +24,9 @@ const Footer = () => {
           <p className="link link-hover">Privacy policy</p>
           <p className="link link-hover">Cookie policy</p>
         </div>
-        <div>
+        <div className="lg:w-auto w-full">
           <span className="footer-title">Newsletter</span>
-          <div className="form-control w-80">
+          <div className="form-control lg:w-80 w-full">
             <label className="label">
               <span className="label-text">Enter your email address</span>
             </label>

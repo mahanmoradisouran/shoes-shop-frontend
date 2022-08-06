@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_ITEM_TO_CART } from "../../Redux/Cart/CartTypes";
 import { BsFillBagCheckFill } from "react-icons/bs";
+import { AddItemToCart } from "../../Redux/Cart/CartActions";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ data }) => {
-  const cart = useSelector((state) => state.cart);
+  const { cart, auth } = useSelector((state) => state);
+  const { products } = cart;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isInCart, setIsInCart] = useState(false);
 
   const { image, name, price, offPrice, discount, _id } = data;
   const offValue = ((price - offPrice) / price).toFixed(2) * 100;
 
   useEffect(() => {
-    const productsId = cart.products.map((i) => i._id);
+    const productsId = products.map((i) => i._id);
     const result = productsId.includes(_id);
     setIsInCart(result);
-  }, []);
+  }, [products, _id]);
 
   const addProductToCart = (product) => {
-    dispatch({ type: ADD_ITEM_TO_CART, payload: product });
-    setIsInCart(true);
+    if (!auth) {
+      navigate("/login/");
+      return;
+    }
+
+    dispatch(AddItemToCart(product));
+    setIsInCart(product);
   };
 
   return (

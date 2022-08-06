@@ -8,7 +8,7 @@ import { RiEmotionSadFill } from "react-icons/ri";
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
   return (
-    <div className="w-full grid grid-cols-3 gap-x-5 py-10">
+    <div className="w-full gap-x-5 py-10 flex flex-col lg:flex-row-reverse">
       {cart.products.length === 0 && (
         <section className="col-span-3 w-full text-center border border-gray-200 rounded-lg p-10">
           <h2 className="text-violet-700">
@@ -26,11 +26,11 @@ const CartPage = () => {
       )}
       {cart.products.length > 0 && (
         <>
-          <section className="col-span-2">
-            <CartList cart={cart} />
-          </section>
-          <section className="col-span-1">
+          <section className="lg:col-span-1 mb-5">
             <CartSummary cart={cart} />
+          </section>
+          <section className="lg:col-span-2">
+            <CartList cart={cart} />
           </section>
         </>
       )}
