@@ -1,3 +1,4 @@
+import AboutUsPage from "./Pages/AboutUsPage";
 import CartPage from "./Pages/CartPage";
 import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
@@ -8,6 +9,7 @@ const routes = [
   { path: "cart/", element: <CartPage /> },
   { path: "login/", element: <LoginPage /> },
   { path: "signup/", element: <SignUpPage /> },
+  { path: "aboutus/", element: <AboutUsPage /> },
 ];
 
 export const navItems = [

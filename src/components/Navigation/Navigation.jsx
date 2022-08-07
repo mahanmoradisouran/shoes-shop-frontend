@@ -59,8 +59,8 @@ const Navigation = () => {
                   <NavLink
                     className={({ isActive }) =>
                       isActive
-                        ? "p-4 rounded-full bg-gradient-to-t from-violet-600 to-violet-500 text-slate-50"
-                        : "text-violet-600 p-4 hover:bg-violet-50 rounded-full"
+                        ? "md:p-4 p-3 rounded-full bg-gradient-to-t from-violet-600 to-violet-500 text-slate-50"
+                        : "text-violet-600 md:p-4 p-3 hover:bg-violet-50 rounded-full"
                     }
                     to="cart/"
                   >
