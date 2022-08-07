@@ -50,7 +50,7 @@ const SignUpForm = ({ currentStep, setCurrentStep }) => {
         .then((res) => {
           dispatch(RegisterUser(res.data));
           setLoading(false);
-          navigate("/");
+          navigate("store/");
         })
         .catch((err) => {
           setLoading(false);
