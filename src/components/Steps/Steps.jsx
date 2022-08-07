@@ -8,7 +8,7 @@ const Steps = ({ stepsTitle, currentStep }) => {
           key={index}
           className={`step ${currentStep - index > 0 && "step-primary"}`}
         >
-          {step}
+          <span className="hidden md:block">{step}</span>
         </li>
       ))}
     </ul>

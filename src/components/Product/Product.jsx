@@ -58,7 +58,7 @@ const Product = ({ data }) => {
             </span>
           </>
         )}
-        <div className="card-actions justify-end z-50">
+        <div className="card-actions justify-end z-40">
           {!discount && <span className="text-red-400 pt-3">unavailable</span>}
           <button
             disabled={!discount && "disabled"}

@@ -84,10 +84,10 @@ const SignUpForm = ({ currentStep, setCurrentStep }) => {
   ];
 
   return (
-    <div className="max-w-screen-xl w-[565px] mx-auto sm:px-6 lg:px-8">
+    <div className="max-w-screen-xl mx-auto sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="p-8 mt-6 mb-0 space-y-4 rounded-lg border border-gray-200">
-          {steps[currentStep - 1]}
+          {steps[currentStep -1 ]}
 
           <p className="text-sm text-center text-gray-500">
             Have account?

@@ -39,13 +39,7 @@ const ProductsFilter = ({ filteredProduct, setFilteredProduct, products }) => {
     if (onlyDiscounted) result = result.filter((p) => p.offPrice !== p.price);
 
     setFilteredProduct(result);
-  }, [
-    sort,
-    search,
-    onlyDiscounted,
-    onlyAvailable,
-    products
-  ]);
+  }, [sort, search, onlyDiscounted, onlyAvailable, products]);
 
   return (
     <div className="lg:w-1/4 w-full flex flex-col items-center gap-5">

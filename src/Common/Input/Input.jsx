@@ -15,7 +15,7 @@ const Input = ({
         <span className="label-text text-gray-400">{label}</span>
       </label>
       <label className="input-group relative">
-        <span className="bg-gray-200 text-gray-700 w-36 justify-center select-none">
+        <span className="bg-gray-200 text-gray-700 lg:text-base px-1 text-sm w-36 justify-center select-none">
           {label}
         </span>
         <div

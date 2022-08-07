@@ -46,18 +46,9 @@ const LoginForm = () => {
   const passwordTypeChangeHandler = () => setShowPassword(!showPassword);
 
   return (
-    <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+    <div className="max-w-screen-xl px-4 lg:py-16 pt-5 pb-10 mx-auto sm:px-6 lg:px-8">
       <div className="max-w-lg mx-auto">
-        <h1 className="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">
-          Get started today
-        </h1>
-
-        <p className="max-w-md mx-auto mt-4 text-center text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
-          sunt dolores deleniti inventore quaerat mollitia?
-        </p>
-
-        <div className="p-8 mt-6 mb-0 space-y-4 rounded-lg border border-gray-200">
+        <div className="lg:p-8 py-4 px-5 mt-6 mb-0 space-y-4 rounded-lg border border-gray-200">
           <Formik
             validateOnMount={true}
             validationSchema={SignupSchema}
@@ -67,7 +58,7 @@ const LoginForm = () => {
           >
             {(formikProps) => (
               <Form>
-                <p className="text-lg font-medium text-slate-500">
+                <p className="text-lg text-center font-medium text-slate-500">
                   Sign in to your account
                 </p>
 
