@@ -34,7 +34,7 @@ const LoginForm = () => {
       .then((res) => {
         dispatch(LoginUser(res.data));
         setLoading(false);
-        navigate("/");
+        navigate("store/");
       })
       .catch((err) => {
         setLoading(false);
