@@ -1,11 +1,13 @@
 import AboutUsPage from "./Pages/AboutUsPage";
 import CartPage from "./Pages/CartPage";
+import HomePage from "./Pages/HomePage";
 import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
 import StorePage from "./Pages/StorePage";
 
 const routes = [
   { path: "store/", element: <StorePage />, index: true },
+  { path: "/", element: <HomePage /> },
   { path: "cart/", element: <CartPage /> },
   { path: "login/", element: <LoginPage /> },
   { path: "signup/", element: <SignUpPage /> },
