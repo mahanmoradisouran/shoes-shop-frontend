@@ -2,6 +2,7 @@ import AboutUsPage from "./Pages/AboutUsPage";
 import CartPage from "./Pages/CartPage";
 import HomePage from "./Pages/HomePage";
 import LoginPage from "./Pages/LoginPage";
+import NotFoundPage from "./Pages/NotFoundPage";
 import SignUpPage from "./Pages/SignUpPage";
 import StorePage from "./Pages/StorePage";
 
@@ -12,6 +13,7 @@ const routes = [
   { path: "login/", element: <LoginPage /> },
   { path: "signup/", element: <SignUpPage /> },
   { path: "aboutus/", element: <AboutUsPage /> },
+  { path: "*", element: <NotFoundPage /> },
 ];
 
 export const navItems = [
